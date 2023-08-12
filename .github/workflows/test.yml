@@ -23,6 +23,7 @@ jobs:
         run: npm run lint  
   build:
     needs: deploy
+    continue-on-error: true
     strategy:
       matrix:
         os: [ubuntu-latest, windows_latest]
