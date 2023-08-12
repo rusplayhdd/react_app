@@ -1,5 +1,8 @@
 name: Test
-on: push
+on: 
+  push:
+    - name: 123qwe
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -10,3 +13,5 @@ jobs:
         run: npm install
       - name: Test app
         run: npm run test
+      - name: use lint 
+        run: npm run lint  
