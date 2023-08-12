@@ -23,14 +23,18 @@ jobs:
         run: npm run lint  
   build:
     needs: deploy
-    runs-on: [ubuntu-latest, windows_latest]
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows_latest]
+        note-ver: [14, 16] 
+    runs-on: ${{ matrix.os }}
     steps:
       - name: get code
         uses: actions/checkout@v3
       - name: Install NodeJs
         uses: actions/setup-node@v3
         with:
-          node-version: 14, 16 
+          node-version: ${{ matrix.note-ver }} 
       - name: use the cache
         uses: actions/cache@v3
         with: 
