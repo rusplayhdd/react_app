@@ -1,14 +1,42 @@
-name: Test
-on: push
+name: deployment
+on: 
+  push:
+    branches:
+      - 123qwe
+  workflow_dispatch:
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
+      - name: use the cache
+        uses: actions/cache@v3
+          with: 
+            path: ~/.npm
+            key: cache-for-project${{ hashFiles('**/package-lock.json') }}
       - name: Install deps
         run: npm install
       - name: Test app
         run: npm run test
-      - name: Lint code
-        run: npm run lint
+      - name: use lint 
+        run: npm run lint  
+  build:
+    needs: deploy
+    runs-on: [ubuntu-latest, windows_latest]
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+      - name: Install NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: [14,16]
+      - name: use the cache
+        uses: actions/cache@v3
+          with: 
+            path: ~/.npm
+            key: cache-for-project${{ hashFiles('**/package-lock.json') }}
+      - name: install deps
+        run: npm ci
+      - name: make a build
+        run: npm run build
