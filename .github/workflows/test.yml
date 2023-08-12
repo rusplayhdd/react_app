@@ -26,7 +26,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: [ubuntu-latest, windows_latest]
+        os: [ubuntu-latest, windows-latest]
         note-ver: [14, 16] 
     runs-on: ${{ matrix.os }}
     steps:
