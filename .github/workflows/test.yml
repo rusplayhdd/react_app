@@ -45,3 +45,16 @@ jobs:
         run: npm ci
       - name: make a build
         run: npm run build
+      - name: up-load
+        uses: actions/upload-artifact@v3
+        with:
+          name: buildSomething
+          path: build 
+  dawnload:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: get file
+        uses: actions/download-artifact@v3
+        with:
+          name: buildSomething     
