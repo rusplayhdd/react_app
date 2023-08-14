@@ -1,0 +1,11 @@
+name: echo_deploy
+on: workflow_dispatch
+jobs:
+  deploy:
+    runs-on: windows-latest
+    steps:
+      - name: inst notejs
+        uses: actions/setup-node@v3.8.0 
+        with:
+          node-version: 14.x
+  
