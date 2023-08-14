@@ -1,8 +1,5 @@
 name: deployment
 on: 
-  push:
-    branches:
-      - 123qwe
   workflow_dispatch:
 jobs:
   deploy:
