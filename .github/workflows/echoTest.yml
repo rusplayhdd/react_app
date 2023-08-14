@@ -3,6 +3,7 @@ on: workflow_dispatch
 jobs:
   deploy:
     runs-on: windows-latest
+    continue-on-error: true
     steps:
       - name: inst notejs
         uses: actions/setup-node@v3.8.0 
@@ -17,4 +18,74 @@ jobs:
           echo "texttexttexttexttexttexttext"
           echo "texttexttexttexttexttexttext"
           echo "texttexttexttexttexttexttext"
+      - name: print more 
+        run: echo "Ангел,
+Put sad wings around me now
+Обними меня поникшими крыльями,
+Protect me from this world of sin
+Защити от грехов этого мира,
+So that we can rise again
+Дабы мы воспарили опять.
+
+
+Oh angel,
+О, Ангел...
+We can find our way somehow
+Мы найдем свой путь во тьме.
+Escaping from the world we're in
+Покинем этот жалкий мир,
+To a place where we began
+В место, где наши души взяли начало.
+And I know we'll find
+И я знаю, мы найдем
+A better place and piece of mind
+Лучшее место, где мы найдем умиротворение.
+
+РЕКЛАМА
+•
+16+
+
+practicum.yandex.ru
+Курс «Frontend-разработчик» от Яндекса. Начните с нуля.
+Узнать больше
+
+РЕКЛАМА
+
+real-desire.ru
+Вибратор с двойной стимуляцией TLUDA
+2 500 ₽
+Узнать больше
+
+РЕКЛАМА
+
+quiz2.kvartal-architect.ru
+Купите квартиру с выгодой 490 000 рублей в Краснодаре!
+Консультация ипотечного брокера бесплатно!
+Узнать больше
+Just tell me that it's all you want
+Скажи мне то,
+For you and me
+Что нам ничего не нужно больше.
+Angel won't you set me free
+О, ангел, отпустишь ли ты меня?
+
+
+Angel,
+Ангел,
+Remember how we chased the sun
+Ты помнишь, как мы двигались к солнцу?
+Then reaching for the stars at night
+Потом наблюдали звезда в ночи.
+As our lives had just begun
+Мы ведь только начинали жить...
+When I close my eyes
+Когда я опускаю свои веки,
+I hear your velvet wings and cry
+Я слышу шум бархатных крыльев... И плачу.
+I'm waiting here with open arms
+Я раскрыл свои объятия,
+Oh can't you see
+
+Источник: https://www.amalgama-lab.com/songs/j/judas_priest/angel.html
+© Лингво-лаборатория «Амальгама»: www.amalgama-lab.com/."
   
