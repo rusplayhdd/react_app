@@ -8,4 +8,13 @@ jobs:
         uses: actions/setup-node@v3.8.0 
         with:
           node-version: 14.x
+      - name: print context
+        run: echo "${{ toJSON('github') }}"
+      - name: print some
+        run: |
+          echo "texttexttexttexttexttexttext"
+          echo "texttexttexttexttexttexttext"
+          echo "texttexttexttexttexttexttext"
+          echo "texttexttexttexttexttexttext"
+          echo "texttexttexttexttexttexttext"
   
