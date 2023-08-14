@@ -5,10 +5,6 @@ jobs:
     runs-on: windows-latest
     continue-on-error: true
     steps:
-      - name: inst notejs
-        uses: actions/setup-node@v3.8.0 
-        with:
-          node-version: 14.x
       - name: print context
         run: echo "${{ toJSON(github) }}"
       - name: print some
