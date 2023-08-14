@@ -1,4 +1,4 @@
-name: echo_deploy
+name: echoDeploy
 on: workflow_dispatch
 jobs:
   deploy:
