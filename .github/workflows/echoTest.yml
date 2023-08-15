@@ -1,8 +1,12 @@
 name: echoDeploy
 on: workflow_dispatch
+env:
+  secret: ${{ secrets.echoTokken }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env: 
+      echo: HiHiHiHiHiHiHiHi
     steps:
       - name: install notejs
         uses: actions/setup-node@v3.8.0
@@ -12,10 +16,10 @@ jobs:
         run: echo "${{ toJSON(github) }}"
       - name: print some
         run: |
-          echo "texttexttexttexttexttexttext"
-          echo "texttexttexttexttexttexttext"
-          echo "texttexttexttexttexttexttext"
-          echo "texttexttexttexttexttexttext"
-          echo "texttexttexttexttexttexttext"
+          echo ${{ env.echo }}
+          echo texttexttexttexttexttexttext
+          echo texttexttexttexttexttexttext
+          echo ${{ env.echo }}
+          echo texttexttexttexttexttexttext
       - name: print more 
-        run: echo "Анге"
+        run: ${{ env.secret }}
