@@ -13,13 +13,13 @@ jobs:
         with:
           note-version: 14.x
       - name: print context
-        run: echo ${{ toJSON(github) }}
+        run: echo "${{ toJSON(github) }}"
       - name: print some
         run: |
-          echo ${{ env.echo }}
+          echo "${{ env.echo }}"
           echo texttexttexttexttexttexttext
           echo texttexttexttexttexttexttext
-          echo ${{ env.echo }}
+          echo "${{ env.echo }}"
           echo texttexttexttexttexttexttext
       - name: print more 
-        run: echo ${{ env.secret }}
+        run: echo "${{ env.secret }}"
