@@ -2,12 +2,19 @@ name: echoDeploy
 on: workflow_dispatch
 env:
   secret: ${{ secrets.echoTokken }}
+  var: Mike where are you?
 jobs:
   deploy:
     runs-on: ubuntu-latest
     env: 
       echo: HiHiHiHiHiHiHiHi
+      var: a^m there 
     steps:
+      - name: cache modules
+        uses: actions/cache@v1.2.1
+        with: 
+          path: ~/.npm
+          key: my-cache${{ hashFiles('**/package-lock.json') }}
       - name: install notejs
         uses: actions/setup-node@v3.8.0
         with:
@@ -20,5 +27,15 @@ jobs:
           echo texttexttexttexttexttexttext
           echo "${{ env.echo }}"
           echo texttexttexttexttexttexttext
+          echo "${{ env.var }}"
       - name: print more 
         run: echo "${{ env.secret }}"
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print something
+        run: |
+          echo hi brother and sister
+          echo "${{ env.var }}"
+    
+        
