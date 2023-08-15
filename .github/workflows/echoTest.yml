@@ -10,15 +10,15 @@ jobs:
       echo: HiHiHiHiHiHiHiHi
       var: a^m there 
     steps:
+      - name: install nodejs
+        uses: actions/setup-node@v3.8.0
+        with:
+          node-version: 14.x
       - name: cache modules
         uses: actions/cache@v1.2.1
         with: 
           path: ~/.npm
           key: my-cache${{ hashFiles('**/package-lock.json') }}
-      - name: install notejs
-        uses: actions/setup-node@v3.8.0
-        with:
-          node-version: 14.x
       - name: print context
         run: echo "${{ toJSON(github) }}"
       - name: print some
