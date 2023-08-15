@@ -13,7 +13,7 @@ jobs:
         with:
           note-version: 14.x
       - name: print context
-        run: echo "${{ toJSON(github) }}"
+        run: echo ${{ toJSON(github) }}
       - name: print some
         run: |
           echo ${{ env.echo }}
@@ -22,4 +22,4 @@ jobs:
           echo ${{ env.echo }}
           echo texttexttexttexttexttexttext
       - name: print more 
-        run: ${{ env.secret }}
+        run: echo ${{ env.secret }}
