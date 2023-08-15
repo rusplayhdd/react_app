@@ -11,13 +11,12 @@ jobs:
       - name: install notejs
         uses: actions/setup-node@v3.8.0
         with:
-          note-version: 14.x
+          node-version: 14.x
       - name: print context
         run: echo "${{ toJSON(github) }}"
       - name: print some
         run: |
           echo "${{ env.echo }}"
-          echo texttexttexttexttexttexttext
           echo texttexttexttexttexttexttext
           echo "${{ env.echo }}"
           echo texttexttexttexttexttexttext
